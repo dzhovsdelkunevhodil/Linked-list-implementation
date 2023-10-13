@@ -2,7 +2,7 @@
 #include "Characters.h"
 #include <iostream>
 
-struct Skills {
+struct SkillsH {
 	std::string firstSkill;
 	std::string secondSkill;
 	std::string thirdSkill;
@@ -12,15 +12,15 @@ class Hero : public Characters {
 private:
 	std::string name;
 	std::string typeWeapon;
-	Skills skills;
+	SkillsH skillsH;
 
 public:
 
 	Hero();
-	void display() override {
+	Hero(Hero& hero);
 
-	}
-
+	void display() override;
+	void setData() override;
 
 
 };

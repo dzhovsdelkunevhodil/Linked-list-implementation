@@ -1,7 +1,8 @@
 #include "Monster.h"
+#include <iostream>
 
 Monster::Monster() {
-#ifdef DEBUG
+#ifdef DEBUGg
 	std::cout << "Constructor Monster\n";
 #endif // DEBUG	
 	name = "";
@@ -12,4 +13,30 @@ Monster::Monster() {
 	description.countEyes = 0;
 	description.countLegs = 0;
 	description.specificity = "";
+}
+
+void Monster::display(){
+	std::cout << "Monster\n";
+	std::cout << "name \t\t:\t" << name << '\n';
+	std::cout << "height \t\t:\t" << size.height << '\n';
+	std::cout << "weight \t\t:\t" << size.weight << '\n';
+	std::cout << "colorSkin \t:\t" << description.colorSkin << '\n';
+	std::cout << "countArms \t:\t" << description.countArms << '\n';
+	std::cout << "countLegs \t:\t" << description.countLegs << '\n';
+	std::cout << "countEyes \t:\t" << description.countEyes << '\n';
+	std::cout << "specificity \t:\t" << description.specificity << '\n';
+
+}
+
+void Monster::setData()
+{
+	std::cout << "Monster\n";
+	std::cout << "name(str) \t:\t"; std::cin >> name; std::cout << '\n';
+	std::cout << "height(int) \t:\t"; std::cin >> size.height; std::cout << '\n';
+	std::cout << "weight(int) \t:\t"; std::cin >> size.weight; std::cout << '\n';
+	std::cout << "colorSkin(str) \t:\t"; std::cin >> description.colorSkin; std::cout << '\n';
+	std::cout << "countArms(int) \t:\t"; std::cin >> description.countArms; std::cout << '\n';
+	std::cout << "countLegs(int) \t:\t"; std::cin >> description.countLegs; std::cout << '\n';
+	std::cout << "countEyes(int) \t:\t"; std::cin >> description.countEyes; std::cout << '\n';
+	std::cout << "specificity(str) \t:\t"; std::cin >> description.specificity; std::cout << '\n';
 }

@@ -23,9 +23,8 @@ private:
 public:
 
 	Monster();
-	void display() override {
-
-	}
+	void display() override;
+	void setData() override;
 
 
 
