@@ -14,11 +14,11 @@ void MenuMain() {
 
 	std::cout << "Select command\n";
 	std::cout << "1 - Add Element\n";
-	std::cout << "2 - Extract Element\n";
-	std::cout << "3 - Работа с Car\n";
+	std::cout << "2 - Delete Element\n";
+	std::cout << "3 - Change Element\n";
 	std::cout << "4 - Display\n";
-	std::cout << "5 - Сохранить в файл все содержимое\n";
-	std::cout << "6 - Извлеч\n";
+	std::cout << "5 - Save to file\n";
+	std::cout << "6 - Extract from file\n";
 	std::cout << "0 - Exit\n";
 	std::cout << "Your choice: ";
 	while (!(std::cin >> action)) {
@@ -63,7 +63,7 @@ void MenuAdd(Keeper* keep) {
 			hero = new Hero;
 			hero->setData();
 			keep->addElement(hero);
-
+		
 			system("pause");
 			system("cls");
 			break;
@@ -416,12 +416,11 @@ void Menu() {
 				if (val <= 0) throw std::exception("Index cannot <0 or =0\n");
 				if (keep->getCount() < val)  throw std::exception("This Element doesn't exist\n");
 				(*(keep))[val].display();
-				keep->extractElement(val);
+				keep->deleteElement(val);
 			}
 			catch (const std::exception& ex) {
 				std::cout << ex.what() << '\n';
 			}
-			//keep->extractElement();
 
 			system("pause");
 			system("cls");
@@ -471,4 +470,5 @@ void Menu() {
 			break;
 		}
 	}
+	delete keep;
 }

@@ -18,6 +18,9 @@ private:
             this->value = data;
             this->prev = prev;
         }
+        ~Element() {
+            delete this->value;
+        }
     };
     int count;
     Element* head;     
@@ -37,14 +40,13 @@ public:
 #ifdef DEBUG
         std::cout << "Destructor Keeper\n";
 #endif // DEBUG	
-        int b = getCount();
-        for (int i = 1;i < b + 1;i++) {
 
-            extractElement(i);
-
+        while (head != nullptr) {
+            help = head;
+            head = head->prev;
+            delete help;
         }
-        head = nullptr;
-        help = nullptr;
+        delete head;
     }
 
 
@@ -80,9 +82,9 @@ public:
         count++;
     }
 
-    void extractElement(const int index) {	//метод удаления элемента по индексу
+    void deleteElement(const int index) {	//
 
-        if (1 == getCount()) {	//1 elem = head
+        if (getCount() == 1) {	//1 elem = head
             delete this->head;	
             count--;
             

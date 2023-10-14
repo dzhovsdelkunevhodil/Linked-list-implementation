@@ -21,7 +21,7 @@ private:
 	Description description;
 
 public:
-
+	~Monster();
 	Monster();
 	Monster(Monster& mon);
 

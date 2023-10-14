@@ -15,7 +15,7 @@ private:
 	SkillsH skillsH;
 
 public:
-
+	~Hero();
 	Hero();
 	Hero(Hero& hero);
 

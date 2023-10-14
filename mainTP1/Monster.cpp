@@ -15,6 +15,12 @@ Monster::Monster() {
 	description.specificity = "";
 }
 
+Monster::~Monster() {
+#ifdef DEBUG
+	std::cout << "Destructor Monster\n";
+#endif // DEBUG	
+}
+
 Monster::Monster(Monster& mon) {
 #ifdef DEBUG
 	std::cout << "Constructor copy Monster\n";

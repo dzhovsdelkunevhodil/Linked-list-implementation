@@ -13,6 +13,12 @@ Hero::Hero() {
 	skillsH.thirdSkill = "";
 }
 
+Hero::~Hero() {
+#ifdef DEBUG
+	std::cout << "Destructor Hero\n";
+#endif // DEBUG	
+}
+
 Hero::Hero(Hero& hero) {
 #ifdef DEBUG
 	std::cout << "Constructor copy Hero\n";

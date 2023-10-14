@@ -15,6 +15,12 @@ Villain::Villain() {
 	skillsV.thirdSkill = "";
 }
 
+Villain::~Villain(){
+#ifdef DEBUG
+	std::cout << "Destructor Villain\n";
+#endif // DEBUG	
+}
+
 Villain::Villain(Villain& vil) {
 #ifdef DEBUG
 	std::cout << "Constructor copy Villain\n";

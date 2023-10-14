@@ -17,7 +17,7 @@ private:
 	SkillsV skillsV;
 
 public:
-
+	~Villain();
 	Villain();
 	Villain(Villain& vil);
 
