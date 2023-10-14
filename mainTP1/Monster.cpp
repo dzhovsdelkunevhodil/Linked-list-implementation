@@ -2,7 +2,7 @@
 #include <iostream>
 
 Monster::Monster() {
-#ifdef DEBUGg
+#ifdef DEBUG
 	std::cout << "Constructor Monster\n";
 #endif // DEBUG	
 	name = "";
@@ -13,6 +13,20 @@ Monster::Monster() {
 	description.countEyes = 0;
 	description.countLegs = 0;
 	description.specificity = "";
+}
+
+Monster::Monster(Monster& mon) {
+#ifdef DEBUG
+	std::cout << "Constructor copy Monster\n";
+#endif // DEBUG	
+	name = mon.name;
+	size.height = mon.size.height;
+	size.weight = mon.size.weight;
+	description.colorSkin = mon.description.colorSkin;
+	description.countArms = mon.description.countArms;
+	description.countEyes = mon.description.countEyes;
+	description.countLegs = mon.description.countLegs;
+	description.specificity = mon.description.specificity;
 }
 
 void Monster::display(){

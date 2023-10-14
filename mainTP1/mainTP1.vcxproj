@@ -148,6 +148,7 @@
     <ClInclude Include="Characters.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="Keeper.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Villain.h" />
   </ItemGroup>

@@ -1,11 +1,11 @@
 #pragma once
-#define DEBUGg
+#define DEBUG
 #include <iostream>
 class Characters {
 
 public:
 	virtual ~Characters() {
-#ifdef DEBUGg
+#ifdef DEBUG
 		std::cout << "Destructor Characters\n";
 #endif // DEBUG	
 	};

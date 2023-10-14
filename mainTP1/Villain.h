@@ -19,6 +19,8 @@ private:
 public:
 
 	Villain();
+	Villain(Villain& vil);
+
 	void display() override;
 	void setData() override;
 

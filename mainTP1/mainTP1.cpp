@@ -6,12 +6,12 @@
 #include "Monster.h"
 #include "Hero.h"
 #include "Villain.h"
-
+#include "Menu.h"
 
 
 int main(){
 	
-	Hero hero;
+	/*Hero hero;
 	Villain villain;
 	Monster monster;
 	Keeper keep;
@@ -22,8 +22,8 @@ int main(){
 	keep.addElement(&villain);
 	keep.addElement(&monster);
 
-	keep.display();
-
+	keep.display();*/
+	Menu();
 
 
 	return 0;

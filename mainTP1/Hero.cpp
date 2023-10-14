@@ -3,7 +3,7 @@
 
 
 Hero::Hero() {
-#ifdef DEBUGg
+#ifdef DEBUG
 	std::cout << "Constructor Hero\n";
 #endif // DEBUG	
 	name = "";
@@ -12,9 +12,9 @@ Hero::Hero() {
 	skillsH.secondSkill = "";
 	skillsH.thirdSkill = "";
 }
-/*
+
 Hero::Hero(Hero& hero) {
-#ifdef DEBUGg
+#ifdef DEBUG
 	std::cout << "Constructor copy Hero\n";
 #endif // DEBUG	
 	name = hero.name;
@@ -22,7 +22,7 @@ Hero::Hero(Hero& hero) {
 	skillsH.firstSkill = hero.skillsH.firstSkill;
 	skillsH.secondSkill = hero.skillsH.secondSkill;
 	skillsH.thirdSkill = hero.skillsH.thirdSkill;
-}*/
+}
 
 
 

@@ -3,7 +3,7 @@
 
 
 Villain::Villain() {
-#ifdef DEBUGg
+#ifdef DEBUG
 	std::cout << "Constructor Villain\n";
 #endif // DEBUG	
 	name = "";
@@ -13,6 +13,19 @@ Villain::Villain() {
 	skillsV.firstSkill = "";
 	skillsV.secondSkill = "";
 	skillsV.thirdSkill = "";
+}
+
+Villain::Villain(Villain& vil) {
+#ifdef DEBUG
+	std::cout << "Constructor copy Villain\n";
+#endif // DEBUG	
+	name = vil.name;
+	typeWeapon = vil.typeWeapon;
+	crime = vil.crime;
+	address = vil.address;
+	skillsV.firstSkill = vil.skillsV.firstSkill;
+	skillsV.secondSkill = vil.skillsV.secondSkill;
+	skillsV.thirdSkill = vil.skillsV.thirdSkill;
 }
 
 void Villain::display(){

@@ -8,11 +8,11 @@ private:
 
     class Element {        //  один элемент в очереди
     public:
-        Characters* value;          //значение
+        Characters* value;    
         Element* prev;
 
-        Element(Characters* data , Element* prev = nullptr) {    //конструктор элемента
-#ifdef DEBUGg
+        Element(Characters* data , Element* prev = nullptr) {   
+#ifdef DEBUG
             std::cout << "Constructor Element\n";
 #endif // DEBUG	
             this->value = data;
@@ -20,12 +20,12 @@ private:
         }
     };
     int count;
-    Element* head;      //указатель на первый элемент
+    Element* head;     
     Element* help;
 
 public:
     Keeper() {
-#ifdef DEBUGg
+#ifdef DEBUG
         std::cout << "Constuctor Keeper\n";
 #endif // DEBUG	
         count = 0;
@@ -34,15 +34,13 @@ public:
     }
 
     ~Keeper() {
-#ifdef DEBUGg
+#ifdef DEBUG
         std::cout << "Destructor Keeper\n";
 #endif // DEBUG	
         int b = getCount();
         for (int i = 1;i < b + 1;i++) {
-           // std::cout << 'C' << getCount() << '\n';
 
             extractElement(i);
-            //std::cout << 'C' << getCount() << '\n';
 
         }
         head = nullptr;
@@ -129,7 +127,7 @@ public:
     void display() {
         try {
 
-            if (getCount() == 0) throw std::exception("Ёлементов нет\n");
+            if (getCount() == 0) throw std::exception("Keeper is empty\n");
 
             std::cout << "\nAll Elements" << std::endl;
             help = head;
@@ -149,7 +147,5 @@ public:
             std::cout << ex.what() << '\n';
         }
     }
-
-
 };
 
