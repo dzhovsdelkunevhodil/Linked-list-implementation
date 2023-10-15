@@ -405,9 +405,9 @@ void Menu() {
 			try {
 				if (keep->getCount() == 0) throw std::exception("Keeper is empty\n");
 				val = 0;
-				std::cout << "Index of Elemnt to extract: ";
+				std::cout << "Index of Elemnt to delete: ";
 				while (!(std::cin >> val)) {
-					std::cout << "Trouble maaaann. Index of Elemnt to extract: ";
+					std::cout << "Trouble maaaann. Index of Elemnt to delete: ";
 					std::cin.clear();
 					std::cin.ignore(std::numeric_limits <std::streamsize>::max(), '\n');
 					if (std::cin >> val)
@@ -428,7 +428,25 @@ void Menu() {
 		case 3:
 			system("cls");
 
-			MenuEdit();
+			try {
+				if (keep->getCount() == 0) throw std::exception("Keeper is empty\n");
+				val = 0;
+				std::cout << "Index of Elemnt to edit: ";
+				while (!(std::cin >> val)) {
+					std::cout << "Trouble maaaann. Index of Elemnt to edit: ";
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits <std::streamsize>::max(), '\n');
+					if (std::cin >> val)
+						break;
+				}
+				if (val <= 0) throw std::exception("Index cannot <0 or =0\n");
+				if (keep->getCount() < val)  throw std::exception("This Element doesn't exist\n");
+				(*(keep))[val].display();
+				keep->changeElement(val);
+			}
+			catch (const std::exception& ex) {
+				std::cout << ex.what() << '\n';
+			}
 
 			system("pause");
 			system("cls");
@@ -436,8 +454,7 @@ void Menu() {
 		case 4:
 			system("cls");
 
-			keep->display();
-
+			keep->displayKeep();
 
 			system("pause");
 			system("cls");

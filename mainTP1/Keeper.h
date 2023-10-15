@@ -6,7 +6,7 @@ class Keeper {
 
 private:
 
-    class Element {        //  один элемент в очереди
+    class Element {        //  one Element in keeper
     public:
         Characters* value;    
         Element* prev;
@@ -20,6 +20,7 @@ private:
         }
         ~Element() {
             delete this->value;
+            delete this->prev;
         }
     };
     int count;
@@ -126,21 +127,26 @@ public:
     }
 
 
-    void display() {
+    void displayKeep() {
         try {
 
             if (getCount() == 0) throw std::exception("Keeper is empty\n");
 
             std::cout << "\nAll Elements" << std::endl;
-            help = head;
-            int i = 1;
+           
+            /*for (int i = 1;i < getCount() + 1;i++) {                          //display from 1 to Count //slower
+                std::cout << "-------Element # " << i << "-------" << std::endl;
+                (*this)[i].display();
+            }*/
 
+            help = head;                                                        //display from Count to 1 //faster
+            int i = getCount();                                                 //because i use keeper as queue (head = #-count Element
             while(help != nullptr){
 
                 std::cout << "-------Element # " << i << "-------" << std::endl;
                 (help->value)->display();
                 help = help->prev;
-                i++;
+                i--;
             }
             std::cout << "\nCount of Elements: " << getCount() << std::endl << std::endl;
         }
@@ -149,5 +155,16 @@ public:
             std::cout << ex.what() << '\n';
         }
     }
+
+    void changeElement(const int index) {
+        std::cout << "\nChange Data\n";
+        (*this)[index].setData();
+    }
+
+
+
+
+
+
 };
 
