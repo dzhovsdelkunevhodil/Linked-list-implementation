@@ -179,7 +179,15 @@ public:
                 out << "-------Element # " << i << "-------\n";
 
                 //code for definition a type of element
-
+                if (sizeof((*this)[i]) == sizeof(Hero)) {
+                    out << "type::Hero\n";
+                }
+                else if (sizeof((*this)[i]) == sizeof(Villain)) {
+                    out << "type::Villain\n";
+                }
+                else if (sizeof((*this)[i]) == sizeof(Monster)){
+                    out << "type::Monster\n";
+                }
 
                 (*this)[i].fileDisplay(out);
                 out << '\n';
