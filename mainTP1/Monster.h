@@ -28,6 +28,6 @@ public:
 	void display() override;
 	void setData() override;
 	void fileDisplay(std::ofstream& out) override;
-
+	void fileSetData(std::ifstream& in) override;
 
 };

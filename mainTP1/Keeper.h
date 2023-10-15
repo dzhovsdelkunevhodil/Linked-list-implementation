@@ -2,6 +2,9 @@
 #include "Characters.h"
 #include <iostream>
 #include <fstream>
+#include "Monster.h"
+#include "Hero.h"
+#include "Villain.h"
 
 class Keeper {
 
@@ -21,7 +24,7 @@ private:
         }
         ~Element() {
             delete this->value;
-            delete this->prev;
+            //delete this->prev;
         }
     };
     int count;
@@ -43,10 +46,11 @@ public:
         std::cout << "Destructor Keeper\n";
 #endif // DEBUG	
 
-        while (head != nullptr) {
+        while (head != nullptr && count!=0) {
             help = head;
             head = head->prev;
             delete help;
+            count--;
         }
         delete head;
     }
@@ -87,7 +91,8 @@ public:
     void deleteElement(const int index) {	//
 
         if (getCount() == 1) {	//1 elem = head
-            delete this->head;	
+            delete this->head;
+            head = nullptr;
             count--;
             
         }
@@ -112,7 +117,6 @@ public:
                     Element* temp = cur;		
                     cur = cur->prev;				
                     current1->prev = cur;		
-                    delete temp -> prev;
                     delete temp;
                     flag = 1;	
                     count--;	
@@ -123,7 +127,6 @@ public:
                     c--;
                 }
             }
-            delete cur, current1;
         }
     }
 
@@ -142,12 +145,13 @@ public:
 
             help = head;                                                        //display from Count to 1 //faster
             int i = getCount();                                                 //because i use keeper as queue (head = #-count Element
-            while(help != nullptr){
+            while(help != nullptr && i!=0){
 
                 std::cout << "-------Element # " << i << "-------" << std::endl;
                 (help->value)->display();
                 help = help->prev;
                 i--;
+                
             }
             std::cout << "\nCount of Elements: " << getCount() << std::endl << std::endl;
         }
@@ -187,6 +191,47 @@ public:
         out.close();
     }
 
+
+    void fileSetDataKeep() {
+        int countElementFile = 0;
+        Hero* hero;
+        Villain* villain;
+        Monster* monster;
+        std::string str;
+        std::ifstream in;          // поток для записи
+        in.open("in.txt");      // открываем файл для записи
+        try {
+            if (!in.is_open()) throw std::exception("File don't open\n");
+            std::cout << "yeah\n";
+            if (in.eof()) throw std::exception("File is empty\n");
+            in >> countElementFile;
+            for (int i = 0;i < countElementFile;i++) {
+
+                in >> str;
+                if (str == "Hero") {
+                    hero = new Hero;
+                    hero->fileSetData(in);
+                    this->addElement(hero);
+                }
+                else if (str == "Villain") {
+                    villain = new Villain;
+                    villain->fileSetData(in);
+                    this->addElement(villain);
+                }
+                else {
+                     monster = new Monster;
+                     monster->fileSetData(in);
+                     this->addElement(monster);
+                }
+
+            }
+            
+        }
+        catch (const std::exception& ex) {
+            std::cout << ex.what();
+        }
+        in.close();
+    }
 
 
 };

@@ -68,3 +68,14 @@ void Villain::fileDisplay(std::ofstream& out)
 	out << "2nd skill \t:\t" << skillsV.secondSkill << '\n';
 	out << "3rd skill \t:\t" << skillsV.thirdSkill << '\n';
 }
+
+void Villain::fileSetData(std::ifstream& in)
+{
+	in >> name;
+	in >> typeWeapon;
+	in >> crime;
+	in >> address;
+	in >> skillsV.firstSkill;
+	in >> skillsV.secondSkill;
+	in >> skillsV.thirdSkill;
+}

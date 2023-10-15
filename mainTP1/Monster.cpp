@@ -72,5 +72,17 @@ void Monster::fileDisplay(std::ofstream& out) {
 	out << "countArms \t:\t" << description.countArms << '\n';
 	out << "countLegs \t:\t" << description.countLegs << '\n';
 	out << "countEyes \t:\t" << description.countEyes << '\n';
-	out << "specificity \t:\t" << description.specificity << '\n';
+	out << "specificity :\t" << description.specificity << '\n';
+}
+
+void Monster::fileSetData(std::ifstream& in)
+{
+	in >> name; 
+	in >> size.height;
+	in >> size.weight; 
+	in >> description.colorSkin; 
+	in >> description.countArms; 
+	in >> description.countLegs; 
+	in >> description.countEyes; 
+	in >> description.specificity; 
 }

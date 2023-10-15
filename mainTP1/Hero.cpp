@@ -62,4 +62,13 @@ void Hero::fileDisplay(std::ofstream& out)
 	out << "3rd skill \t:\t" << skillsH.thirdSkill << '\n';
 }
 
+void Hero::fileSetData(std::ifstream& in)
+{
+	in >> name;
+	in >> typeWeapon;
+	in >> skillsH.firstSkill;
+	in >> skillsH.secondSkill;
+	in >> skillsH.thirdSkill;
+}
+
 
