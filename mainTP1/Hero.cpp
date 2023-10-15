@@ -30,9 +30,6 @@ Hero::Hero(Hero& hero) {
 	skillsH.thirdSkill = hero.skillsH.thirdSkill;
 }
 
-
-
-
 void Hero::display(){
 	std::cout << "Hero\n";
 	std::cout << "name \t\t:\t" << name << '\n';
@@ -42,8 +39,7 @@ void Hero::display(){
 	std::cout << "3rd skill \t:\t" << skillsH.thirdSkill << '\n';
 }
 
-void Hero::setData()
-{
+void Hero::setData(){
 	std::cout << "Hero\n";
 	std::cout << "name(str) \t:\t"; std::cin >> name; std::cout << '\n';
 	std::cout << "typeWeapon(str) \t:\t"; std::cin >> typeWeapon; std::cout << '\n';
@@ -52,8 +48,7 @@ void Hero::setData()
 	std::cout << "3rd skill(str) \t:\t"; std::cin >> skillsH.thirdSkill; std::cout << '\n';
 }
 
-void Hero::fileDisplay(std::ofstream& out)
-{
+void Hero::fileDisplay(std::ofstream& out){
 	out << "Hero\n";
 	out << "name \t\t:\t" << name << '\n';
 	out << "typeWeapon \t:\t" << typeWeapon << '\n';
@@ -62,8 +57,7 @@ void Hero::fileDisplay(std::ofstream& out)
 	out << "3rd skill \t:\t" << skillsH.thirdSkill << '\n';
 }
 
-void Hero::fileSetData(std::ifstream& in)
-{
+void Hero::fileSetData(std::ifstream& in){
 	in >> name;
 	in >> typeWeapon;
 	in >> skillsH.firstSkill;

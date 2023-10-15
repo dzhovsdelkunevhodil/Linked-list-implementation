@@ -8,7 +8,6 @@
 int action;
 int actionAdd;
 int val = 0;
-int actionAttribute;
 
 void MenuMain() {
 
@@ -101,10 +100,7 @@ void MenuAdd(Keeper* keep) {
 
 void Menu() {
 	Keeper* keep = new Keeper;
-;
-	
 	action = 1;
-	
 
 	while (action != 0) {
 		MenuMain();

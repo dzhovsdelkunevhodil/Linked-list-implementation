@@ -46,11 +46,9 @@ void Monster::display(){
 	std::cout << "countLegs \t:\t" << description.countLegs << '\n';
 	std::cout << "countEyes \t:\t" << description.countEyes << '\n';
 	std::cout << "specificity \t:\t" << description.specificity << '\n';
-
 }
 
-void Monster::setData()
-{
+void Monster::setData(){
 	std::cout << "Monster\n";
 	std::cout << "name(str) \t:\t"; std::cin >> name; std::cout << '\n';
 	std::cout << "height(int) \t:\t"; std::cin >> size.height; std::cout << '\n';
@@ -75,8 +73,7 @@ void Monster::fileDisplay(std::ofstream& out) {
 	out << "specificity :\t" << description.specificity << '\n';
 }
 
-void Monster::fileSetData(std::ifstream& in)
-{
+void Monster::fileSetData(std::ifstream& in){
 	in >> name; 
 	in >> size.height;
 	in >> size.weight; 

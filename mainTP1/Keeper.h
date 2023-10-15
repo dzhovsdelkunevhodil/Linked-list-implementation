@@ -45,7 +45,6 @@ public:
 #ifdef DEBUG
         std::cout << "Destructor Keeper\n";
 #endif // DEBUG	
-
         while (head != nullptr && count!=0) {
             help = head;
             head = head->prev;
@@ -55,11 +54,9 @@ public:
         delete head;
     }
 
-
     int getCount() { return count; }
 
     Characters& operator[] (const int index) {
-
         int cnt = getCount();
         Element* cur;
         cur = this->head;
@@ -77,7 +74,6 @@ public:
         if (head == nullptr) {
             head = new Element(x);
             head->value = x;
-
         }
         else {
             help = new Element(x);
@@ -94,7 +90,6 @@ public:
             delete this->head;
             head = nullptr;
             count--;
-            
         }
         else if (index == getCount()) {	//last
             Element* cur = this->head;	
@@ -133,9 +128,7 @@ public:
 
     void displayKeep() {
         try {
-
             if (getCount() == 0) throw std::exception("Keeper is empty\n");
-
             std::cout << "\nAll Elements" << std::endl;
            
             /*for (int i = 1;i < getCount() + 1;i++) {                          //display from 1 to Count //slower
@@ -151,7 +144,6 @@ public:
                 (help->value)->display();
                 help = help->prev;
                 i--;
-                
             }
             std::cout << "\nCount of Elements: " << getCount() << std::endl << std::endl;
         }
@@ -199,7 +191,6 @@ public:
         out.close();
     }
 
-
     void fileSetDataKeep() {
         int countElementFile = 0;
         Hero* hero;
@@ -208,6 +199,7 @@ public:
         std::string str;
         std::ifstream in;          // поток для записи
         in.open("in.txt");      // открываем файл для записи
+
         try {
             if (!in.is_open()) throw std::exception("File don't open\n");
             std::cout << "yeah\n";
@@ -233,14 +225,11 @@ public:
                 }
 
             }
-            
         }
         catch (const std::exception& ex) {
             std::cout << ex.what();
         }
         in.close();
     }
-
-
 };
 

@@ -45,8 +45,7 @@ void Villain::display(){
 	std::cout << "3rd skill \t:\t" << skillsV.thirdSkill << '\n';
 }
 
-void Villain::setData()
-{
+void Villain::setData(){
 	std::cout << "Villain\n";
 	std::cout << "name(str) \t:\t"; std::cin >> name; std::cout << '\n';
 	std::cout << "typeWeapon(str) \t:\t"; std::cin >> typeWeapon; std::cout << '\n';
@@ -57,8 +56,7 @@ void Villain::setData()
 	std::cout << "3rd skill(str) \t:\t"; std::cin >> skillsV.thirdSkill; std::cout << '\n';
 }
 
-void Villain::fileDisplay(std::ofstream& out)
-{
+void Villain::fileDisplay(std::ofstream& out){
 	out << "Villain\n";
 	out << "name \t\t:\t" << name << '\n';
 	out << "typeWeapon \t:\t" << typeWeapon << '\n';
@@ -69,8 +67,7 @@ void Villain::fileDisplay(std::ofstream& out)
 	out << "3rd skill \t:\t" << skillsV.thirdSkill << '\n';
 }
 
-void Villain::fileSetData(std::ifstream& in)
-{
+void Villain::fileSetData(std::ifstream& in){
 	in >> name;
 	in >> typeWeapon;
 	in >> crime;
