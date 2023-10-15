@@ -1,6 +1,6 @@
 #include "Villain.h"
 #include <iostream>
-
+#include <fstream>
 
 Villain::Villain() {
 #ifdef DEBUG
@@ -55,4 +55,16 @@ void Villain::setData()
 	std::cout << "1st skill(str) \t:\t"; std::cin >> skillsV.firstSkill; std::cout << '\n';
 	std::cout << "2nd skill(str) \t:\t"; std::cin >> skillsV.secondSkill; std::cout << '\n';
 	std::cout << "3rd skill(str) \t:\t"; std::cin >> skillsV.thirdSkill; std::cout << '\n';
+}
+
+void Villain::fileDisplay(std::ofstream& out)
+{
+	out << "Villain\n";
+	out << "name \t\t:\t" << name << '\n';
+	out << "typeWeapon \t:\t" << typeWeapon << '\n';
+	out << "crime \t\t:\t" << crime << '\n';
+	out << "address \t:\t" << address << '\n';
+	out << "1st skill \t:\t" << skillsV.firstSkill << '\n';
+	out << "2nd skill \t:\t" << skillsV.secondSkill << '\n';
+	out << "3rd skill \t:\t" << skillsV.thirdSkill << '\n';
 }

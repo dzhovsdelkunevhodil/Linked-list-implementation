@@ -1,5 +1,6 @@
 #include "Monster.h"
 #include <iostream>
+#include <fstream>
 
 Monster::Monster() {
 #ifdef DEBUG
@@ -59,4 +60,17 @@ void Monster::setData()
 	std::cout << "countLegs(int) \t:\t"; std::cin >> description.countLegs; std::cout << '\n';
 	std::cout << "countEyes(int) \t:\t"; std::cin >> description.countEyes; std::cout << '\n';
 	std::cout << "specificity(str) \t:\t"; std::cin >> description.specificity; std::cout << '\n';
+}
+
+
+void Monster::fileDisplay(std::ofstream& out) {
+	out << "Monster\n";
+	out << "name \t\t:\t" << name << '\n';
+	out << "height \t\t:\t" << size.height << '\n';
+	out << "weight \t\t:\t" << size.weight << '\n';
+	out << "colorSkin \t:\t" << description.colorSkin << '\n';
+	out << "countArms \t:\t" << description.countArms << '\n';
+	out << "countLegs \t:\t" << description.countLegs << '\n';
+	out << "countEyes \t:\t" << description.countEyes << '\n';
+	out << "specificity \t:\t" << description.specificity << '\n';
 }

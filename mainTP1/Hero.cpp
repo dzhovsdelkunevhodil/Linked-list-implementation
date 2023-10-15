@@ -1,7 +1,7 @@
 #include "Hero.h"
 #include <iostream>
 
-
+#include <fstream>
 Hero::Hero() {
 #ifdef DEBUG
 	std::cout << "Constructor Hero\n";
@@ -50,6 +50,16 @@ void Hero::setData()
 	std::cout << "1st skill(str) \t:\t"; std::cin >> skillsH.firstSkill; std::cout << '\n';
 	std::cout << "2nd skill(str) \t:\t"; std::cin >> skillsH.secondSkill; std::cout << '\n';
 	std::cout << "3rd skill(str) \t:\t"; std::cin >> skillsH.thirdSkill; std::cout << '\n';
+}
+
+void Hero::fileDisplay(std::ofstream& out)
+{
+	out << "Hero\n";
+	out << "name \t\t:\t" << name << '\n';
+	out << "typeWeapon \t:\t" << typeWeapon << '\n';
+	out << "1st skill \t:\t" << skillsH.firstSkill << '\n';
+	out << "2nd skill \t:\t" << skillsH.secondSkill << '\n';
+	out << "3rd skill \t:\t" << skillsH.thirdSkill << '\n';
 }
 
 

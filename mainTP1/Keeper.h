@@ -1,6 +1,7 @@
 #pragma once
 #include "Characters.h"
 #include <iostream>
+#include <fstream>
 
 class Keeper {
 
@@ -162,7 +163,29 @@ public:
     }
 
 
+    void fileDisplayKeep() {
+        std::ofstream out;          //
+        out.open("out.txt", std::ios::out);         //delete prev data in file   
+                                                    //std::ios::app - save prev data in file  
+        try {
+            if (!out.is_open()) throw std::exception("File don't open\n");
+            if (getCount() == 0) out << "Keeper is empty\n";
+            std::cout << "yeah\n";
+            for (int i = 1;i < getCount() + 1;++i) {
+                out << "-------Element # " << i << "-------\n";
 
+                //code for definition a type of element
+
+
+                (*this)[i].fileDisplay(out);
+                out << '\n';
+            }
+        }
+        catch (const std::exception& ex) {
+            std::cout << ex.what();
+        }
+        out.close();
+    }
 
 
 

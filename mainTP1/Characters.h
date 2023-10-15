@@ -11,5 +11,6 @@ public:
 	};
 	virtual void display() = 0;
 	virtual void setData() = 0;
+	virtual void fileDisplay(std::ofstream& out) = 0;
 
 };
