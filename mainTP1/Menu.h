@@ -157,7 +157,7 @@ void Menu() {
 				if (val <= 0) throw std::exception("Index cannot <0 or =0\n");
 				if (keep->getCount() < val)  throw std::exception("This Element doesn't exist\n");
 				(*(keep))[val].display();
-				keep->changeElement(val);
+				keep->editElement(val);
 			}
 			catch (const std::exception& ex) {
 				std::cout << ex.what() << '\n';

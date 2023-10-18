@@ -125,7 +125,6 @@ public:
         }
     }
 
-
     void displayKeep() {
         try {
             if (getCount() == 0) throw std::exception("Keeper is empty\n");
@@ -153,7 +152,7 @@ public:
         }
     }
 
-    void changeElement(const int index) {
+    void editElement(const int index) {
         std::cout << "\nChange Data\n";
         (*this)[index].setData();
     }
@@ -232,4 +231,3 @@ public:
         in.close();
     }
 };
-

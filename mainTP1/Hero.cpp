@@ -64,5 +64,3 @@ void Hero::fileSetData(std::ifstream& in){
 	in >> skillsH.secondSkill;
 	in >> skillsH.thirdSkill;
 }
-
-

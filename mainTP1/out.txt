@@ -1,12 +1,4 @@
 -------Element # 1-------
-Hero
-name 		:	1
-typeWeapon 	:	1
-1st skill 	:	1
-2nd skill 	:	1
-3rd skill 	:	1
-
--------Element # 2-------
 Villain
 name 		:	2
 typeWeapon 	:	2
@@ -16,32 +8,22 @@ address 	:	2
 2nd skill 	:	2
 3rd skill 	:	2
 
+-------Element # 2-------
+Monster
+name 		:	4
+height 		:	44
+weight 		:	4
+colorSkin 	:	4
+countArms 	:	4
+countLegs 	:	4
+countEyes 	:	4
+specificity :	4
+
 -------Element # 3-------
 Hero
-name 		:	7
-typeWeapon 	:	7
-1st skill 	:	7
-2nd skill 	:	7
-3rd skill 	:	7
-
--------Element # 4-------
-Monster
-name 		:	9
-height 		:	9
-weight 		:	9
-colorSkin 	:	9
-countArms 	:	9
-countLegs 	:	9
-countEyes 	:	9
-specificity :	9
-
--------Element # 5-------
-Villain
-name 		:	5
-typeWeapon 	:	5
-crime 		:	5
-address 	:	5
-1st skill 	:	5
-2nd skill 	:	5
-3rd skill 	:	5
+name 		:	tt
+typeWeapon 	:	t
+1st skill 	:	t
+2nd skill 	:	t
+3rd skill 	:	t
 
