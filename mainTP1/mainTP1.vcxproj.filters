@@ -55,5 +55,8 @@
     <Text Include="out.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
+    <Text Include="CMakeLists.txt">
+      <Filter>Исходные файлы</Filter>
+    </Text>
   </ItemGroup>
 </Project>
